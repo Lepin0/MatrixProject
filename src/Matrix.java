@@ -87,4 +87,32 @@
         }
         return trans;
     }
+
+    public Matrix multip_copmplex(Complex value){
+        int rows = this.data.length;
+        int cols  = this.data[0].length;
+        Matrix result = new Matrix(rows, cols);
+
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++){
+
+                result.data[i][j] = this.data[i][j].multip(value);
+            }
+        }
+        return result;
+    }
+
+    public Matrix div_copmplex(Complex value){
+        int rows = this.data.length;
+        int cols  = this.data[0].length;
+        Matrix result = new Matrix(rows, cols);
+
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++){
+
+                result.data[i][j] = this.data[i][j].div(value);
+            }
+        }
+        return result;
+    }
 }

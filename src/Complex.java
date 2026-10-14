@@ -20,6 +20,38 @@
         return image;
     }
 
+    public Complex multip(Complex other){
+
+        double cr = this.GetReal();
+        double ci = this.GetImage();
+
+        double nr = other.GetReal();
+        double ni = other.GetImage();
+
+        double newreal = cr * nr - ci * ni;
+        double newimage = cr * ni + nr * ci;
+
+        Complex result = new Complex(newreal, newimage);
+
+        return result;
+    }
+
+    public Complex div(Complex other){
+
+        double cr = this.GetReal();
+        double ci = this.GetImage();
+
+        double nr = other.GetReal();
+        double ni = other.GetImage();
+
+        double newreal = (cr * nr + ci * ni)/(nr*nr + ni*ni);
+        double newimage = (nr * ci - cr * ni)/(nr*nr + ni*ni);
+
+        Complex result = new Complex(newreal, newimage);
+
+        return result;
+    }
+
     @Override 
     public String toString(){
         if (image>=0){
