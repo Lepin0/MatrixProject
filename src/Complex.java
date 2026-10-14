@@ -53,12 +53,14 @@
     }
 
     @Override 
-    public String toString(){
-        if (image>=0){
-            return real + " + " + image + "i";
-        }
-        else {
-            return real + " - " + (-image) + "i";
+    public String toString() {
+        String realStr = String.format("%.2f", real);
+        String imagStr = String.format("%.2f", Math.abs(image));
+
+        if (image >= 0) {
+            return realStr + " + " + imagStr + "i";
+        } else {
+            return realStr + " - " + imagStr + "i";
         }
     }
 }
